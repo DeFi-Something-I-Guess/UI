@@ -1,0 +1,63 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Underlying",
+  "sourceName": "contracts/Game/Resources/Underlying.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "asset",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "depositToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061010f806100206000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c80632e1a7d4d14604b57806338d52e0f14605b578063b6b55f2514604b578063c89039c51460a3575b600080fd5b6059605636600460c2565b50565b005b600054607a9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b600154607a9073ffffffffffffffffffffffffffffffffffffffff1681565b60006020828403121560d2578081fd5b503591905056fea264697066735822122046cf9e6ec10885db7c594ee44e5e3fa5a5f85c02e970178515cceebcea767b5f64736f6c63430008040033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060465760003560e01c80632e1a7d4d14604b57806338d52e0f14605b578063b6b55f2514604b578063c89039c51460a3575b600080fd5b6059605636600460c2565b50565b005b600054607a9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b600154607a9073ffffffffffffffffffffffffffffffffffffffff1681565b60006020828403121560d2578081fd5b503591905056fea264697066735822122046cf9e6ec10885db7c594ee44e5e3fa5a5f85c02e970178515cceebcea767b5f64736f6c63430008040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

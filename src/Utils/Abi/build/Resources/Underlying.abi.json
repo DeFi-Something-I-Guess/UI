@@ -1,0 +1,57 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time"],
+	"functions": [
+		{
+			"name": "deposit",
+			"inputs": [
+				{"name":"amount","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"amount","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "asset",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"asset","type":"address"}
+			]
+		},
+		{
+			"name": "depositToken",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"depositToken","type":"address"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"asset","type":"address"},
+		{"name":"depositToken","type":"address"}
+	]
+}
