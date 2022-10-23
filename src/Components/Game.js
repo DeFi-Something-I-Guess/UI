@@ -33,7 +33,7 @@ export default function Game() {
 
   const handlePlantTree = (e) => {
     e.preventDefault();
-     upgradeResource(state.web3, x, y, 5);
+     upgradeResource(state.web3, x, y, 4);
   }
 
   return (
