@@ -36,7 +36,7 @@ export default function Game() {
     e.preventDefault();
     var farm = usersFarm(state.web3, 0, 0)
     if(farm != "0x0000000000000000000000000000000000000000"){
-     upgradeResource(state.web3, farm, 0);
+     upgradeResource(state.web3, farm, 5);
     }
   }
 
@@ -44,8 +44,8 @@ export default function Game() {
     <div className="Game">
       <Card>
         <Button variant="contained" color="primary" onClick={handleCreateFarm} className={classes.button}> Create Farm </Button>
-        <Button variant="contained" color="primary" onClick={handleHarvest} className={classes.button}> Plant Tree </Button>
-        <Button variant="contained" color="primary" onClick={handlePlantTree} className={classes.button}> Harvest </Button>
+        <Button variant="contained" color="primary" onClick={handlePlantTree} className={classes.button}> Plant Tree </Button>
+        <Button variant="contained" color="primary" onClick={handleHarvest} className={classes.button}> Harvest </Button>
 
       </Card>
     </div>

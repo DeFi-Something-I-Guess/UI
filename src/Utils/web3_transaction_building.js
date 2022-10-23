@@ -27,7 +27,7 @@ export async function initWorldContract(web3) {
 export async function initFarmManagerContract(web3) {
     var contract_json = require('./Abi/build/contracts/FarmManager.json');
     var contact_abi = contract_json['abi'];
-    var contract_address = chainInfo[0]['deployedFarmManager']
+    var contract_address = chainInfo['default'][0]['deployedFarmManager']
     var contract = await new web3.eth.Contract(contact_abi, contract_address);
     return contract
 }
@@ -35,7 +35,7 @@ export async function initFarmManagerContract(web3) {
 export async function initResourceManagerContract(web3) {
     var contract_json = require('./Abi/build/contracts/ResourceManager.json');
     var contact_abi = contract_json['abi'];
-    var contract_address = chainInfo[0]['deployedResourceManager']
+    var contract_address = chainInfo['default'][0]['deployedResourceManager']
     var contract = await new web3.eth.Contract(contact_abi, contract_address);
     return contract
 }
@@ -56,7 +56,7 @@ export async function createFarm(web3, x, y) {
 export async function usersFarm(web3, x, y) {
     var worldContract = await initWorldContract(web3);
     var account = await getAccount(web3)
-    return worldContract.methods.getFarm(x , y);
+    return worldContract.methods.getFarmAt(x , y);
 }
 
 export async function upgradeResource(web3, plot, resourceIdx) {
@@ -83,25 +83,3 @@ export async function harvest(web3, plot){
     var account = await getAccount(web3)
     await farmManagerContract.methods.harvestAll().send({from:account[0]})
 }
-
-/*
-export async function getBalances(web3, plot){
-    var balances = []
-    var farmManagerContract = await initFarmManagerContract(web3)
-    var resourceManagerContract = await initResourceManagerContract(web3)
-    var account = await getAccount(web3)
-
-    var total = await resourceManagerContract.methods.totalResources().call()
-    var resources = []
-    
-    for(i=0; i< total; i++){
-        resources.push((await resourceManagerContract.methods.getResource(i).call()))
-    }
-
-    token = resources[resourceIdx]['underlying']
-    tokenContract = await initTokenContract(web3, token)
-
-    await token.methods.approve(chainInfo[0]['deployedFarmManager'], 100e18.toString()).send({from:account[0]})
-    await farmManagerContract.methods.levelUpResource(plot, resourceIdx).send({from:account[0]})
-}
-*/
