@@ -18,8 +18,8 @@ import {
 export default function Game() {
   const [state, dispatch] = useContext(Context);
   const classes = GlobalStyles();
-  var x = 0;
-  var y = 0;
+  var x = 1;
+  var y = 1;
 
   const handleCreateFarm = (e) => {
     e.preventDefault();
