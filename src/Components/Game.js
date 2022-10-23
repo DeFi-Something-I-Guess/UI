@@ -18,26 +18,22 @@ import {
 export default function Game() {
   const [state, dispatch] = useContext(Context);
   const classes = GlobalStyles();
+  var x = 0;
+  var y = 0;
 
   const handleCreateFarm = (e) => {
     e.preventDefault();
-    createFarm(state.web3, 0, 0);
+    createFarm(state.web3, x, y);
   }
 
   const handleHarvest = (e) => {
     e.preventDefault();
-    var farm = usersFarm(state.web3, 0, 0)
-    if(farm != "0x0000000000000000000000000000000000000000"){
-     harvest(state.web3, farm);
-    }
+    harvest(state.web3, x, y);
   }
 
   const handlePlantTree = (e) => {
     e.preventDefault();
-    var farm = usersFarm(state.web3, 0, 0)
-    if(farm != "0x0000000000000000000000000000000000000000"){
-     upgradeResource(state.web3, farm, 5);
-    }
+     upgradeResource(state.web3, x, y, 5);
   }
 
   return (
