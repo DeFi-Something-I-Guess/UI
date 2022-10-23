@@ -1,6 +1,5 @@
 import { useReducer } from 'react';
 import Swal from 'sweetalert2'
-var contractAddresses = require('./addresses.json');
 var chainInfo = require('./ChainInfo.js');
 
 function infoSwal(title) {
@@ -67,12 +66,12 @@ export async function upgradeResource(web3, plot, resourceIdx) {
     var total = await resourceManagerContract.methods.totalResources().call()
     var resources = []
     
-    for(i=0; i< total; i++){
+    for(var i=0; i< total; i++){
         resources.push((await resourceManagerContract.methods.getResource(i).call()))
     }
 
-    token = resources[resourceIdx]['underlying']
-    tokenContract = await initTokenContract(web3, token)
+    var token = resources[resourceIdx]['underlying']
+    var tokenContract = await initTokenContract(web3, token)
 
     await token.methods.approve(chainInfo[0]['deployedFarmManager'], 100e18.toString()).send({from:account[0]})
     await farmManagerContract.methods.levelUpResource(plot, resourceIdx).send({from:account[0]})

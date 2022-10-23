@@ -10,6 +10,11 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 
+import {
+  harvest, upgradeResource, createFarm,
+  usersFarm
+} from "../Utils/web3_transaction_building.js"
+
 export default function Game() {
   const [state, dispatch] = useContext(Context);
   const classes = GlobalStyles();
@@ -17,6 +22,7 @@ export default function Game() {
   return (
     <div className="Game">
       <Card>
+        <Button variant="contained" color="primary" onClick={handleRewardClaim} className={classes.button}> Create Farm </Button>
         <Button>Create Farm</Button>
         <Button>Plant Tree</Button>
         <Button>Harvest</Button>
