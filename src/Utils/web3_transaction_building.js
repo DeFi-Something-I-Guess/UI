@@ -16,9 +16,10 @@ export async function getAccount(web3) {
 }
 
 export async function initWorldContract(web3) {
+    console.log(chainInfo)
     var contract_json = require('./Abi/build/contracts/World.json');
     var contact_abi = contract_json['abi'];
-    var contract_address = chainInfo[0]['deployedWorldContract']
+    var contract_address = chainInfo['default'][0]['deployedWorldContract']
     var contract = await new web3.eth.Contract(contact_abi, contract_address);
     return contract
 }
@@ -49,7 +50,7 @@ export async function initTokenContract(web3, address) {
 export async function createFarm(web3, x, y) {
     var contract = await initWorldContract(web3)
     var account = await getAccount(web3)
-    await contract.methods.buyPlot(x, y).send({ from: account[0], value: web3.utils.toWei("1")})
+    await contract.methods.buyPlot(x, y).send({ from: account[0]})
 }
 
 export async function usersFarm(web3, x, y) {
