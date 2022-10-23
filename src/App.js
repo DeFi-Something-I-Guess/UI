@@ -7,12 +7,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Store from './store'
 
 import Bar from './Components/Bar.js';
-import ChatPage from './Pages/ChatPage.js';
 import Footer from './Components/Footer.js';
-import ConversationLoader from './Components/ConversationLoader.js';
-import FarmPage from './Pages/FarmPage';
-
-//https://coolors.co/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15
+import GamePage from './Pages/GamePage';
 
 const theme = createMuiTheme({
   palette: {
@@ -34,13 +30,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <Store>
-          <ConversationLoader/>
           <div className="App">
             <Bar />
             <Router>
               <Switch>
                 <Route path="/">
-                  <FarmPage />
+                  <GamePage />
                 </Route>
               </Switch>
             </Router>

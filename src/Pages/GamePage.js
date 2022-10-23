@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card';
 import Image from '../img/Optimism.png';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import Game from "../Components/Game.js"
 
 const styles = {
   paperContainer: {
@@ -14,7 +15,7 @@ const styles = {
   }
 };
 
-export default function FarmPage() {
+export default function GamePage() {
   const classes = GlobalStyles();
   var showPlaceholder = false
 
@@ -24,6 +25,7 @@ export default function FarmPage() {
         <Grid item xs={12} sm={12} md={12} xl={12}>
           <Card>
             <Typography variant="h1" className={classes.title} align="center"> Your Farm </Typography>
+            <Game/>
           </Card>
         </Grid>
       </Grid>
